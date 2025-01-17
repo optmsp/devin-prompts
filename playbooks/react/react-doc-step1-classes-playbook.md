@@ -9,9 +9,12 @@ Hi Devin! This playbook will guide you through Phase 1 of documenting React code
 
 1. **Initial Setup**
    ```bash
-   # List all React component files
+   # List and count all React component files
    find . -type f -name "*.jsx" -o -name "*.tsx" > components.txt
+   wc -l components.txt > total_react_components.txt  # Save total file count
    ```
+
+   Note: The total number of files saved in `total_react_components.txt` will be used later to ensure all files are documented.
 
 2. **Component Documentation Process**
    For each component:
@@ -69,10 +72,18 @@ Hi Devin! This playbook will guide you through Phase 1 of documenting React code
    export default UserCard;
    ```
 
-5. **Validation**
+5. **File Tracking**
+   1. Note the total number of files in `components.txt` (see `total_react_components.txt`).
+   2. As you document each component, mark it with a checklist or record it in a "documented_files.txt".
+   3. Compare the length of `documented_files.txt` vs. `total_react_components.txt` at the end:
+      - If they differ, locate the missing files, document them, and repeat until all files are documented.
+
+6. **Validation**
    - Review each documented component
    - Ensure documentation is clear and helpful
    - Verify all checklist items are complete
+   - Ensure that the count of documented files matches the count in `total_react_components.txt`
+   - If any files are missing, repeat the documentation for those files until the counts match
    - Get approval before proceeding to Phase 2
 
 Remember:

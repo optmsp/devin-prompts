@@ -9,9 +9,12 @@ Hi Devin! This playbook will guide you through Phase 1 of documenting PHP code, 
 
 1. **Initial Setup**
    ```bash
-   # List all PHP files
+   # List and count all PHP files
    find . -type f -name "*.php" > php_files.txt
+   wc -l php_files.txt > total_php_files.txt  # Save total file count
    ```
+
+   Note: The total number of files saved in `total_php_files.txt` will be used later to ensure all files are documented.
 
 2. **Class Documentation Process**
    For each class:
@@ -60,10 +63,18 @@ Hi Devin! This playbook will guide you through Phase 1 of documenting PHP code, 
    }
    ```
 
-5. **Validation**
+5. **File Tracking**
+   1. Note the total number of files in `php_files.txt` (see `total_php_files.txt`).
+   2. As you document each class, mark it with a checklist or record it in a "documented_files.txt".
+   3. Compare the length of `documented_files.txt` vs. `total_php_files.txt` at the end:
+      - If they differ, locate the missing files, document them, and repeat until all files are documented.
+
+6. **Validation**
    - Review each documented class
    - Ensure documentation is clear and helpful
    - Verify all checklist items are complete
+   - Ensure that the count of documented files matches the count in `total_php_files.txt`
+   - If any files are missing, repeat the documentation for those files until the counts match
    - Get approval before proceeding to Phase 2
 
 Remember:
