@@ -10,6 +10,14 @@ Hi Devin! This playbook will guide you through Phase 3 of documenting Python cod
 ### Instructions
 
 1. **Initial Setup**
+   ```bash
+   # List and count all Python files
+   find . -type f -name "*.py" > python_files.txt
+   wc -l python_files.txt > total_python_files.txt  # Save total file count
+   ```
+
+   Note: The total number of files saved in `total_python_files.txt` will be used later to ensure all files are documented.
+
    - Ensure Phase 1 and 2 documentation is complete and approved
    - Review the list of modules/classes from previous phases
 
@@ -44,7 +52,13 @@ Hi Devin! This playbook will guide you through Phase 3 of documenting Python cod
            self.instance_attr: Type = value
    ```
 
-4. **Phase 3 Documentation Checklist**
+4. **File Tracking**
+   1. Note the total number of files in `python_files.txt` (see `total_python_files.txt`).
+   2. As you document each variable and attribute, mark it with a checklist or record it in a "documented_files.txt".
+   3. Compare the length of `documented_files.txt` vs. `total_python_files.txt` at the end:
+      - If they differ, locate the missing files, document them, and repeat until all files are documented.
+
+5. **Phase 3 Documentation Checklist**
    For each variable/attribute:
    - [ ] Clear, concise description
    - [ ] Type hints included (PEP 484)
@@ -96,6 +110,8 @@ Hi Devin! This playbook will guide you through Phase 3 of documenting Python cod
    - Review each documented variable and attribute
    - Ensure documentation is clear and helpful
    - Verify all checklist items are complete
+   - Ensure that the count of documented files matches the count in `total_python_files.txt`
+   - If any files are missing, repeat the documentation for those files until the counts match
    - Get final approval for the module's documentation
 
 Remember:
